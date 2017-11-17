@@ -1,0 +1,13 @@
+{
+    "name": "ob/outlook",
+    "description": "Tester outlook aws",
+    "authors": [
+        {
+            "name": "Tobias F. Petersen",
+            "email": "tobsf@hotmail.com"
+        }
+    ],
+    "require": {
+        "php-ews/php-ews": "^1.0"
+    }
+}
