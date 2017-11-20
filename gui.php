@@ -5,7 +5,10 @@ ini_set('display_startup_errors', TRUE);
 
 include_once 'events.php';
 include_once 'bhus_concierge.php';
-
+function isTodayWeekend() {
+    $currentDate = new DateTime("now", new DateTimeZone("Europe/Amsterdam"));
+    return $currentDate->format('N') >= 6;
+}
 $_GET['targetmailbox'] = "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok21_borghus@odense.dk,lok22_borghus@odense.dk,lok31_borghus@odense.dk,lok32_borghus@odense.dk,lok33_borghus@odense.dk,lok34_borghus@odense.dk,lok35_borghus@odense.dk,lok36_borghus@odense.dk";
 $_GET['start'] = '00:00:00'; 
 $_GET['end'] = '23:59:59';
@@ -66,8 +69,12 @@ $calendar_events = $concierge->GetByServiceInput();
                     $('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, 400000, function() {
                       $(this).animate({ scrollTop: 0 }, 1000);
                    });
-    });
-</script>
+             
+             setTimeout(function(){ 
+                 
+                }, 3000);
+                });
+        </script>
     </head>
     <body class="col-md-12 ">
         
@@ -75,7 +82,7 @@ $calendar_events = $concierge->GetByServiceInput();
             <div id="top-bar" class="col-md-12 navbar-fixed-top">
                   <div id="logo" class="col-md-12">
                     <div class="col-md-2"><img  src="bhus_booking_events(1).png"></div>
-                    <div class="col-md-7 align-center"><h1>Det sker i dag</h1></div>  <div class="col-md-3" style="float:right;text-align: right;"><h1>Åbent 8-21</h1></div>
+                    <div class="col-md-7 align-center"><h1>Det sker i dag</h1></div>  <div class="col-md-3" style="float:right;text-align: right;"><h1><?php echo isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
                   </div>
             </div>
             <div class="col-md-12" style="margin-top:150px;">
@@ -91,7 +98,7 @@ $calendar_events = $concierge->GetByServiceInput();
                     <?php
             foreach($calendar_events as $event)
             {
-                if(strpos(strtolower($event->Location), 'skærm') !== true)
+                if(strpos(strtolower($event->Location), 'skærm') !== false)
                 {
                     $event->Location = str_replace("skærm", "", $event->Location);
                     date_default_timezone_set('Europe/Copenhagen');
@@ -118,4 +125,5 @@ $calendar_events = $concierge->GetByServiceInput();
 </html>
 
 <?php
+// For the current date
 
