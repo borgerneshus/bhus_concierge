@@ -1,0 +1,27 @@
+body,#top-bar
+{
+    color:white;
+    background-color: #115959;
+    overflow-y: no-display;
+}
+#wrapper
+{
+    margin: 10px;
+    padding: 20px;
+    
+}
+.align-center
+{
+    text-align: center;
+}
+#main-table
+{
+    font-size: 34px;
+    
+}
+#logo h1{
+    font-size: 80px;
+}
+#logo h2{
+    font-size: 45px;
+}
