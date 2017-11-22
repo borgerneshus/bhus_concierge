@@ -43,10 +43,14 @@ try {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <?php 	include_once("templates/" . $template . "/header.php");
 				
-		?>
+        ?>
         <meta charset="utf-8" />
     </head>
     <body class="col-md-12 removemargin removepadding">
-    	<?php include_once("templates/" . $template . "/gui.php") ?>
+        <input type="hidden" val="<?php $template ?>">
+        <div id="content">
+            <?php include_once("templates/" . $template . "/gui.php") ?>
+        </div>
+        <div id="preloader"></div>
     </body>
 </html>
