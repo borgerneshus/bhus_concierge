@@ -1,9 +1,14 @@
-body,#top-bar
+body
 {
     color:white;
     background-color: #115959;
     overflow-y: no-display;
     height: 100%;
+    width: 100%;
+}
+#top-bar
+{
+    background-color: #115959;
     width: 100%;
 }
 #wrapper
