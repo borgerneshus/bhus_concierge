@@ -29,7 +29,7 @@ foreach($result as $mail => $array)
         $encode_test[$mail][] = array("subject" => $obj->Subject,"start" => $obj->Start,"end" => $obj->End);
     }
 }
-echo  json_encode($encode_test,true,600);
+echo  json_encode($encode_test);
  /*switch (json_last_error()) {
         case JSON_ERROR_NONE:
             echo ' - No errors';
