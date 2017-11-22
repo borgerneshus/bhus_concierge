@@ -2,7 +2,8 @@
             <div id="top-bar" class="col-md-12 navbar-fixed-top removemargin">
                   <div id="logo" class="col-md-12 removepadding">
                     <div class="col-md-3 removepadding"><img style="float:left;"  src="bhus_booking_events(1).png"></div>
-                    <div class="col-md-5 align-center"><h1>Det sker i dag</h1></div>  <div class="col-md-4 removepadding" style="float:right;text-align: right;"><h1><?php echo !isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
+                    <div class="col-md-6 align-center middle-text"><h1>Det sker i dag</h1></div>  
+                    <div class="col-md-3 removepadding right-text" style="float:right;text-align: right;"><h1><?php echo !isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
                   </div>
             </div>
             <div class="col-md-12" style="margin-top:150px;">

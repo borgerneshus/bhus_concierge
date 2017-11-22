@@ -45,4 +45,9 @@ body
     tbody{
         font-size: 45px;
     }
+    .middle-text
+    {
+        font-size: 70px;
+        padding-top: 20px;
+    }
 }
