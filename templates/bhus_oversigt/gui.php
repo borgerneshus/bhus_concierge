@@ -1,4 +1,4 @@
-<div id="wrapper" class="col-md-12 removemargin removepadding" style="margin:0px;padding:5px;">
+<div id="wrapper" class="col-md-12 " style="margin:0px;padding:5px;">
             <div id="top-bar" class="col-md-12 navbar-fixed-top removemargin removepadding">
                   <div id="logo" class="col-md-12 removepadding">
                     <div class="col-md-3 removepadding"><img style="float:left;"  src="bhus_booking_events(1).png"></div>
