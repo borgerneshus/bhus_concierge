@@ -3,11 +3,13 @@ body,#top-bar
     color:white;
     background-color: #115959;
     overflow-y: no-display;
+    height: 100%;
 }
 #wrapper
 {
     margin: 10px;
     padding: 20px;
+    height: 100%;
     
 }
 .align-center
@@ -27,6 +29,7 @@ body,#top-bar
 }
 @media screen and (width: 1080) and (width: 1920) {
     #logo h1{
-        font-size: 20px;
+        font-size: 41px;
+        padding-top: 40px;
     }
 }
