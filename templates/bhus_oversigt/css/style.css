@@ -4,6 +4,7 @@ body,#top-bar
     background-color: #115959;
     overflow-y: no-display;
     height: 100%;
+    width: 100%;
 }
 #wrapper
 {
