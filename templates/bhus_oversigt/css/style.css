@@ -37,9 +37,10 @@ body
 /*
 * Horizontal screen query.
 */
-@media screen and (width: 1080) and (height: 1920) {
+@media screen and (width: 1080) {
     #logo h1{
-       
+        padding-top:40px;
+       font-size: 40px;
     }
     tbody{
         font-size: 45px;
