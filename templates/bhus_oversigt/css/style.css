@@ -38,7 +38,7 @@ body
 * Horizontal screen query.
 */
 @media screen and (width: 1080) {
-    #logo h1{
+    .right-text{
         padding-top:40px;
        font-size: 40px;
     }
