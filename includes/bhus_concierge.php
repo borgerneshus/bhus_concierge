@@ -21,6 +21,7 @@ use \jamesiarmes\PhpEws\ArrayType\NonEmptyArrayOfPathsToElementType;
 use \jamesiarmes\PhpEws\ArrayType\NonEmptyArrayOfBaseItemIdsType;
 class bhus_concierge {
     public $ews = null;
+    public $last_return = null;
     /*
      * Attempt to extract data from url , and validate we are ready to run.
      */
@@ -147,13 +148,30 @@ class bhus_concierge {
             }
             usort($return,array('bhus_concierge','sort_by_start'));
         }
-        
+        $this->last_return = $return;
         return $return;
+    }
+    public function GetRefreshTime()
+    {
+        if($this->last_return != null)
+        {
+            usort($this->last_return,array('bhus_concierge','sort_by_end'));
+            return reset($this->last_return)->End;
+        }
     }
     function sort_by_start($a, $b)
     {
         $a = new DateTime($a->Start);
         $b = new DateTime($b->Start);
+        if ($a == $b) {
+            return 0;
+        }
+        return ($a < $b) ? -1 : 1;
+    }
+    function sort_by_end($a, $b)
+    {
+        $a = new DateTime($a->End);
+        $b = new DateTime($b->End);
         if ($a == $b) {
             return 0;
         }

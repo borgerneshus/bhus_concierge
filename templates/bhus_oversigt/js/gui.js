@@ -13,7 +13,4 @@ $(function() {
                 $(this).animate({ scrollTop: 0 }, 400000);
              });
           }, 850000);
-
- 
-      
     });

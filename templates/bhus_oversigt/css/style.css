@@ -25,3 +25,8 @@ body,#top-bar
 #logo h2{
     font-size: 45px;
 }
+@media screen and (width: 1080) and (width: 1920) {
+    #logo h1{
+        font-size: 20px;
+    }
+}
