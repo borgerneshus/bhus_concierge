@@ -18,7 +18,7 @@ $result = $concierge->GetByServiceInput(true);
  * Make it serializeable
  */
 $encode_test = array();
-$test = json_encode($obj);
+//$test = json_encode($obj);
 /*
  * We do this because php json_encode can not decode the more complex
  * objects from the php-ews library.
