@@ -40,7 +40,7 @@ body
 @media screen and (width: 1080) {
     .right-text{
         padding-top:40px;
-       font-size: 40px;
+       font-size: 40px !important;
     }
     tbody{
         font-size: 45px;
@@ -48,6 +48,6 @@ body
     .middle-text
     {
         font-size: 70px;
-        padding-top: 20px;
+        padding-top: 20px !important;
     }
 }
