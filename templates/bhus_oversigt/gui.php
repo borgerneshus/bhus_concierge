@@ -53,7 +53,9 @@ function isTodayWeekend() {
                 <?php
             }
         } else {
-            
+            ?>
+        <div id="no-results"><br/><br/>Ingen aktiviter på nuværende tidspunkt.</div>
+            <?php
         }
         ?>
         <input id="pagecount" value="<?php echo sizeof($calendar_events) ?>" type="hidden">

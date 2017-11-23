@@ -17,6 +17,7 @@ $calendar_events = array();
 try {
     $concierge = new bhus_concierge();
     $calendar_events = $concierge->GetByServiceInput();
+    //$calendar_events = array();
 } catch (Exception $e) {
     
 }

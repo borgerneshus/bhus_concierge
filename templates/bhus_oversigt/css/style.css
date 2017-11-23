@@ -39,3 +39,10 @@ tbody{
     font-size: 70px !important;
     padding-top: 20px !important;
 }
+#no-results
+{
+    font-size: 70px;
+     margin:0 auto;
+    position:relative;
+    text-align: center;
+}
