@@ -2,6 +2,10 @@ body
 {
     height: 100vh !important;
 }
+#content
+{
+    min-height: 50vh;
+}
 .removepadding
 {
     padding:0px;
