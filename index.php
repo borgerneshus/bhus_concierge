@@ -37,7 +37,8 @@ $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : 
         <div id="content">
             <?php //include_once("templates/" . $template . "/gui.php") ?>
         </div>
-        
+        <br/><br/><br/><br/>
+        <span id="bhus_open" class="col-md-12" style="text-align:center;font-size: 70px;display:none;" class="pull-left">Se programmet for åbningsweekenden på borgerneshus.dk</span>
         <div id="cover"><div id="center-cover"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i><b>Indlæser...</b><br/></div></div>
         <input id="template" type="hidden" value="<?php echo $template ?>">
         <input id="targetemails" type="hidden" value="<?php echo $_GET['targetmailbox'] ?>">
@@ -46,6 +47,7 @@ $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : 
         <input id="displaycount" type="hidden" value="<?php echo $_GET['displaycount'] ?>">
          <footer class="footer col-md-12">
             <div class="">
+              
               <span id="pagecounter" class="pull-right"></span>
             </div>
         </footer>

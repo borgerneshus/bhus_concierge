@@ -55,7 +55,7 @@ function isTodayWeekend() {
             }
         } else {
             ?>
-        <div id="no-results"><br/><br/>Ingen aktiviter på nuværende tidspunkt.</div>
+        <!--- <div id="no-results"><br/><br/>Ingen aktiviter på nuværende tidspunkt.</div> ---!>
             <?php
         }
         ?>

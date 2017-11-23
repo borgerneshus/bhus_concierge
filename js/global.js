@@ -3,6 +3,7 @@ var CurrentPage = 0;
 var IntervalPageChange = 0;
 $(document).ready(function(){
 
+    
     var PageRotaote_timeout = 0;
     UpdateTemplate();
     
@@ -29,12 +30,16 @@ $(document).ready(function(){
             /*
              * Update the page counts = 0;
              */
+            $('#bhus_open').toggle();
             unloadScrollBars();
             PageCount = parseInt($('#pagecount').val());
             CurrentPage = 0;
             clearInterval(IntervalPageChange);
-            $("#pagecounter").text((CurrentPage+1) + "/" + PageCount);
-            IntervalPageChange = setInterval(function(){ PageRotate() }, 6000);
+            if(PageCount > 1)
+            {
+                $("#pagecounter").text((CurrentPage+1) + "/" + PageCount);
+                IntervalPageChange = setInterval(function(){ PageRotate() }, 8000);
+             }
            
           })
          .done(function() {
