@@ -19,6 +19,7 @@ $(document).ready(function(){
         var jqxhr = $.get( url, function(data ) {
             $("#cover").css('display','none');
             $( "#content" ).fadeOut( "slow", function() {
+                clearInterval(IntervalPageChange);
                  $('#content').html(data);
                 $( "#content" ).fadeIn( "slow", function() {
                      /*
@@ -31,7 +32,7 @@ $(document).ready(function(){
                     unloadScrollBars();
                     PageCount = parseInt($('#pagecount').val());
                     CurrentPage = 0;
-                    clearInterval(IntervalPageChange);
+                    
                     if(PageCount > 1)
                     {
                         $("#pagecounter").text((CurrentPage+1) + "/" + PageCount);
