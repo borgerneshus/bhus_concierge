@@ -2,22 +2,14 @@ var PageCount = 0;
 var CurrentPage = 0;
 var IntervalPageChange = 0;
 $(document).ready(function(){
-
-    
     var PageRotaote_timeout = 0;
     UpdateTemplate();
-    
-    /*
-    * We need to keep repeating this everytime its done ?
-    * And we need to determin optimal scroll rate.
-    */
-     setInterval(function(){ 
+    setInterval(function(){ 
         UpdateTemplate();
      },900000);
-     
+
     function UpdateTemplate()
     {
-        var hidden_fields = $( this ).find( 'input:hidden' );
         var template = $('#template').val();
         var TargetMails = $('#targetemails').val();
         var StartDate = $('#startdate').val();
@@ -25,22 +17,29 @@ $(document).ready(function(){
         var DisplayCount = $('#displaycount').val();
         var url = "/contentgenerator.php?skabelon=" + template + "&targetmailbox=" + TargetMails + "&start=" + StartDate + "&end=" + EndDate + "&displaycount="+DisplayCount;
         var jqxhr = $.get( url, function(data ) {
-             $("#cover").css('display','none');
-            $('#content').html(data);
-            /*
-             * Update the page counts = 0;
-             */
-            $('#bhus_open').toggle();
-            unloadScrollBars();
-            PageCount = parseInt($('#pagecount').val());
-            CurrentPage = 0;
-            clearInterval(IntervalPageChange);
-            if(PageCount > 1)
-            {
-                $("#pagecounter").text((CurrentPage+1) + "/" + PageCount);
-                IntervalPageChange = setInterval(function(){ PageRotate() }, 8000);
-             }
-           
+            $("#cover").css('display','none');
+            $( "#content" ).fadeOut( "slow", function() {
+                 $('#content').html(data);
+                $( "#content" ).fadeIn( "slow", function() {
+                     /*
+                    * Update the page counts = 0;
+                    */
+                   if($('#bhus_open').is(':hidden'))
+                   {
+                    $('#bhus_open').toggle();
+                   }
+                    unloadScrollBars();
+                    PageCount = parseInt($('#pagecount').val());
+                    CurrentPage = 0;
+                    clearInterval(IntervalPageChange);
+                    if(PageCount > 1)
+                    {
+                        $("#pagecounter").text((CurrentPage+1) + "/" + PageCount);
+                        IntervalPageChange = setInterval(function(){ PageRotate() }, 8000);
+                    }
+                });
+               
+            });
           })
          .done(function() {
             })
