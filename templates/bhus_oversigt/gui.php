@@ -13,6 +13,7 @@ function isTodayWeekend() {
             <div class="col-md-3 removepadding" style="float:right;text-align: right;"><h1 class="right-text"><?php echo!isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
         </div>
     </div>
+    <br/>
     <div class="col-md-12" style="margin-top:150px;">
         <?php
         if (sizeof($calendar_events) != 0) {
