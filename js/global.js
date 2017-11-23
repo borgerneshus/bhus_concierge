@@ -11,7 +11,7 @@ $(document).ready(function(){
     * We need to keep repeating this everytime its done ?
     * And we need to determin optimal scroll rate.
     */
-     setTimeout(function(){ 
+     setInterval(function(){ 
         UpdateTemplate();
      },900000);
      
