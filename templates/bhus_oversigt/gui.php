@@ -1,3 +1,9 @@
+<?php
+function isTodayWeekend() {
+    $currentDate = new DateTime("now", new DateTimeZone("Europe/Amsterdam"));
+    return $currentDate->format('N') >= 6;
+}
+?>
 <div id="wrapper" class="col-md-12 " style="margin:0px;padding:5px;">
             <div id="top-bar" class="col-md-12 navbar-fixed-top removemargin">
                   <div id="logo" class="col-md-12 removepadding">
@@ -17,25 +23,32 @@
                 </thead>
                 <tbody>
                     <?php
-            foreach($calendar_events as $event)
-            {
-                if(strpos(strtolower($event->Location), 'skærm') !== false)
-                {
-                    $event->Location = str_replace("skærm", "", $event->Location);
-                    date_default_timezone_set('Europe/Copenhagen');
-                    $start = new DateTime($event->Start);
-                    $start->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
-                    $end = new DateTime($event->End);
-                    $end->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
-                ?>
-                      <tr>
-                        <td class="col-md-3"><?php echo $start->format('H:i') . " - " .$end->format('H:i') ?></td>
-                        <td class="col-md-6" ><?php echo $event->Subject ?></td>
-                        <td class="col-md-3"><?php echo $event->Location ?></td>
-                      </tr>
-                <?php
-                }
-            }
+                    if(sizeof($calendar_events) != 0)
+                    {
+                        foreach($calendar_events as $event)
+                        {
+                            if(strpos(strtolower($event->Location), 'skærm') !== true)
+                            {
+                                $event->Location = str_replace("skærm", "", $event->Location);
+                                date_default_timezone_set('Europe/Copenhagen');
+                                $start = new DateTime($event->Start);
+                                $start->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
+                                $end = new DateTime($event->End);
+                                $end->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
+                            ?>
+                                  <tr>
+                                    <td class="col-md-3"><?php echo $start->format('H:i') . " - " .$end->format('H:i') ?></td>
+                                    <td class="col-md-6" ><?php echo $event->Subject ?></td>
+                                    <td class="col-md-3"><?php echo $event->Location ?></td>
+                                  </tr>
+                            <?php
+                            }
+                        }
+                    }
+                    else
+                    {
+                    }
+            
             ?>
             </tbody>
         </table>
