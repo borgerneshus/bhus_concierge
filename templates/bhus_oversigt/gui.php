@@ -8,9 +8,9 @@ function isTodayWeekend() {
 <div id="wrapper" class="col-sm-12 col-lg-12 col-md-12 " style="margin:0px;padding:5px;">
     <div id="top-bar" class="col-sm-12 col-lg-12 col-md-12 removemargin">
         <div id="logo" class="col-sm-12 col-lg-12 col-md-12 removepadding">
-            <div class="col-md-3 removepadding" style="width:25%;float:left;overflow: hidden;"><img style="float:left;height: 100px;margin-top: 18px;"  src="bhus_booking_events(1).png"></div>
-            <div class="col-md-6 align-center " style="width:50%;float:left;"><h1 class="middle-text">Mødeoversigt</h1></div>  
-            <div class="col-md-3 removepadding" style="width:25%;float:right;text-align: right;"><h1 class="right-text"><?php echo!isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
+            <div class="col-sm-2 col-lg-2 col-md-2 removepadding"><img style="float:left;height: 100px;margin-top: 18px;"  src="bhus_booking_events(1).png"></div>
+            <div class="col-sm-4 col-lg-4 col-md-4 align-center "><h1 class="middle-text">Mødeoversigt</h1></div>  
+            <div class="col-sm-3 col-lg-3 col-md-4 removepadding" style="float:right;text-align: right;"><h1 class="right-text"><?php echo!isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
         </div>
     </div>
     <br/>
