@@ -22,21 +22,20 @@ body
 {
     text-align: center;
 }
-#main-table
-{
-    //font-size: 34px;
-    
-}
 .right-text{
-    padding-top:26px !important;
-   //font-size: 34px !important;
+    //padding-top:26px !important;
+   font-size: 70px !important;
 }
 tbody{
-    //font-size: 37px;
+    font-size: 24px;
+}
+thead
+{
+    font-size: 24px;
 }
 .middle-text
 {
-    //font-size: 34px !important;
+    font-size: 70px !important;
     padding-top: 26px !important;
 }
 #no-results
