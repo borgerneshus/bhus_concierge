@@ -29,14 +29,14 @@ body
 }
 .right-text{
     padding-top:26px !important;
-   font-size: 34px !important;
+   //font-size: 34px !important;
 }
 tbody{
-    font-size: 37px;
+    //font-size: 37px;
 }
 .middle-text
 {
-    font-size: 34px !important;
+    //font-size: 34px !important;
     padding-top: 26px !important;
 }
 #no-results
@@ -45,4 +45,8 @@ tbody{
      margin:0 auto;
     position:relative;
     text-align: center;
+}
+h1
+{
+    font-size: 24px !important;
 }
