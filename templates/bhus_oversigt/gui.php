@@ -17,7 +17,6 @@ function isTodayWeekend() {
     <div class="col-md-12" style="margin-top:150px;">
         <?php
         if (sizeof($calendar_events) != 0) {
-
             $calendar_events = array_chunk($calendar_events, $_GET['displaycount']);
             foreach ($calendar_events as $page => $events) {
                 ?>
@@ -32,7 +31,7 @@ function isTodayWeekend() {
                     <tbody>
                         <?php
                         foreach ($events as $event) {
-                            if (strpos(strtolower($event->Location), 'skærm') !== true) {
+                            if (strpos(strtolower($event->Location), 'skærm') !== false) {
                                 $event->Location = str_replace("skærm", "", $event->Location);
                                 date_default_timezone_set('Europe/Copenhagen');
                                 $start = new DateTime($event->Start);
