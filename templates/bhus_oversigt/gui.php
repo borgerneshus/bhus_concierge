@@ -9,12 +9,12 @@ function isTodayWeekend() {
     <div id="top-bar" class="col-sm-12 col-lg-12 col-md-12 removemargin">
         <div id="logo" class="col-sm-12 col-lg-12 col-md-12 removepadding">
             <div class="col-sm-2 col-lg-2 col-md-2 removepadding"><img style="float:left;height: 100px;margin-top: 18px;"  src="bhus_booking_events(1).png"></div>
-            <div class="col-sm-4 col-lg-7 col-md-4 align-center "><h1 class="middle-text">Mødeoversigt</h1></div>  
-            <div class="col-sm-3 col-lg-3 col-md-4 removepadding" style="float:right;text-align: right;"><h1 class="right-text"><?php echo!isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
+            <div class="col-sm-4 col-lg-7 col-md-4 align-center "><h1 class="middle-text" style="padding-top:15px !important;" >Mødeoversigt</h1></div>  
+            <div class="col-sm-3 col-lg-3 col-md-12 align-center"><h1 class="right-text" style="pading-top:13px !important;font-size:40px !important;padding-left:150px;" ><?php echo!isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
         </div>
     </div>
     <br/>
-    <div class="col-md-12" style="margin-top:150px;">
+    <div class="col-md-12" style="margin-top:20px;">
         <?php
         $pagecount = 0;
         if (sizeof($calendar_events) != 0) {
@@ -29,7 +29,7 @@ function isTodayWeekend() {
                             <th scope="col">Lokale</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style="font-size:22px !important;">
                         <?php
                         $show_count = 0;
                         foreach ($events as $event) {
@@ -43,8 +43,8 @@ function isTodayWeekend() {
                                 ?>
                                 <tr>
                                     <td class="col-md-3"><?php echo $start->format('H:i') . " - " . $end->format('H:i') ?></td>
-                                    <td class="col-md-6" ><?php echo $event->Subject ?></td>
-                                    <td class="col-md-3"><?php echo $event->Location ?></td>
+                                    <td class="col-md-5" ><?php echo $event->Subject ?></td>
+                                    <td class="col-md-4"><?php echo $event->Location ?></td>
                                 </tr>
                                 <?php
                                 $show_count++;

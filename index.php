@@ -9,7 +9,7 @@ if($template == null)
 $_GET['targetmailbox'] = isset($_GET['targetmailbox']) ? $_GET['targetmailbox'] : "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok21_borghus@odense.dk,lok22_borghus@odense.dk,lok31_borghus@odense.dk,lok32_borghus@odense.dk,lok33_borghus@odense.dk,lok34_borghus@odense.dk,lok35_borghus@odense.dk,lok36_borghus@odense.dk";
 $_GET['start'] = isset($_GET['start']) ? $_GET['start'] : '00:00:00'; 
 $_GET['end'] =  isset($_GET['start']) ? $_GET['start'] : '23:59:59';
-$_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '7';
+$_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '10';
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +38,7 @@ $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : 
             <?php //include_once("templates/" . $template . "/gui.php") ?>
         </div>
         <br/><br/><br/><br/>
-        <div id="bhus_open" class="col-md-12" style="padding:10px;text-align:center;font-size: 30px;display:none;" class="pull-left">Se programmet for åbningsweekenden på borgerneshus.dk</div>
+        <div id="" class="col-md-12" style="padding:10px;text-align:center;font-size: 30px;display:none;" class="pull-left">Se programmet for åbningsweekenden på borgerneshus.dk</div>
         <div id="cover"><div id="center-cover"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i><b>Indlæser...</b><br/></div></div>
         <input id="template" type="hidden" value="<?php echo $template ?>">
         <input id="targetemails" type="hidden" value="<?php echo $_GET['targetmailbox'] ?>">
@@ -46,9 +46,8 @@ $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : 
         <input id="enddate" type="hidden" value="<?php echo $_GET['end'] ?>">
         <input id="displaycount" type="hidden" value="<?php echo $_GET['displaycount'] ?>">
          <footer class="footer col-md-12">
-            <div class="">
-              
-              <span id="pagecounter" class="pull-right"></span>
+            <div class="col-md-12">
+              <div id="pagecounter" style="float:right;font-size:30px;padding-right:20px !important;"></div>
             </div>
         </footer>
     </body>
