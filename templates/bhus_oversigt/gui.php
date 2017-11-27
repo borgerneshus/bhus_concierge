@@ -40,11 +40,12 @@ function isTodayWeekend() {
                                 $start->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
                                 $end = new DateTime($event->End);
                                 $end->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
+                                $locations = explode(';',$event->Location );
                                 ?>
                                 <tr>
-                                    <td class="col-md-3"><?php echo $start->format('H:i') . " - " . $end->format('H:i') ?></td>
-                                    <td class="col-md-5" ><?php echo $event->Subject ?></td>
-                                    <td class="col-md-4"><?php echo $event->Location ?></td>
+                                    <td style="white-space: nowrap;" class="col-md-2"><?php echo $start->format('H:i') . " - " . $end->format('H:i') ?></td>
+                                    <td class="col-md-5" ><?php echo $show_count == 0 ? "lang lang lang lang lang lang lang lang lang lang lang lang lang lang lang lang lang lang lang lang  titel" : $event->Subject; ?></td>
+                                    <td style="width:20%;" class="col-md-5"><?php foreach($locations as $index => $location){echo $index >= 1 ? "<br/>". $location : $location;} ?></td>
                                 </tr>
                                 <?php
                                 $show_count++;

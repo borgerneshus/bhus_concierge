@@ -47,7 +47,7 @@ $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : 
         <input id="displaycount" type="hidden" value="<?php echo $_GET['displaycount'] ?>">
          <footer class="footer col-md-12">
             <div class="col-md-12">
-              <div id="pagecounter" style="float:right;font-size:30px;padding-right:20px !important;"></div>
+              <div id="pagecounter" class="col-md-12" style="text-align: right;font-size:30px;padding-right:20px !important;"></div>
             </div>
         </footer>
     </body>
