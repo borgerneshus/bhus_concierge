@@ -1,5 +1,13 @@
 <?php
+require_once 'vendor/autoload.php';
+use jamesiarmes\PhpEws\Autodiscover;
 
+// Replace these with the appropriate values.
+$email = '';
+$password = '';
+
+// Simplest usage, no special options.
+$client = Autodiscover::getEWS("tfpet@odense.dk", "MinKode201777");
 $template = isset($_GET['skabelon']) ?  $_GET['skabelon']: null;
 if($template == null)
 {
