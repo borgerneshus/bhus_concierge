@@ -5,7 +5,7 @@ var IntervalPageUpdate = 0;
 var UpdateCount = 0;
 $(document).ready(function(){
     var PageRotaote_timeout = 0;
-    //UpdateTemplate();
+    UpdateTemplate();
     IntervalPageUpdate = setInterval(function(){ 
         UpdateTemplate();
      },900000);
