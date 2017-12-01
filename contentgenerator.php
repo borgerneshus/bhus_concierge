@@ -8,6 +8,10 @@ $_GET['targetmailbox'] = "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok21_
 $_GET['start'] = isset($_GET['start']) ? $_GET['start'] :'00:00:00'; 
 $_GET['end'] =  isset($_GET['end']) ? $_GET['end']:'23:59:59';
 $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '4';
+if($_GET['debug'] == true)
+{
+    mail("tfpet@odense.dk", "Jeg Opdatere", "opdatere indhold");
+}
 $template = isset($_GET['skabelon']) ?  $_GET['skabelon']: null;
 if($template == null)
 {

@@ -1,10 +1,12 @@
 var PageCount = 0;
 var CurrentPage = 0;
 var IntervalPageChange = 0;
+var IntervalPageUpdate = 0;
+var UpdateCount = 0;
 $(document).ready(function(){
     var PageRotaote_timeout = 0;
-    UpdateTemplate();
-    setInterval(function(){ 
+    //UpdateTemplate();
+    IntervalPageUpdate = setInterval(function(){ 
         UpdateTemplate();
      },900000);
 
@@ -15,7 +17,17 @@ $(document).ready(function(){
         var StartDate = $('#startdate').val();
         var EndDate = $('#enddate').val();
         var DisplayCount = $('#displaycount').val();
-        var url = "/contentgenerator.php?skabelon=" + template + "&targetmailbox=" + TargetMails + "&start=" + StartDate + "&end=" + EndDate + "&displaycount="+DisplayCount;
+        var DebugTest = false;
+        d=new Date();
+        if(UpdateCount != 0 && UpdateCount < 10)
+        {
+            var DebugTest = true;
+        }
+        else
+        {
+            UpdateCount++;
+        }
+        var url = "/contentgenerator.php?skabelon=" + template + "&targetmailbox=" + TargetMails + "&start=" + StartDate + "&end=" + EndDate + "&displaycount="+DisplayCount+"&timestamp="+d.getTime()+"&debug=" + DebugTest;
         var jqxhr = $.get( url, function(data ) {
             $("#cover").css('display','none');
             $( "#content" ).fadeOut( "slow", function() {
