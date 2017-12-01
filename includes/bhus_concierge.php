@@ -219,10 +219,10 @@ class outlook_ews
         // We want to get the online meeting link in the response. Note that if this
         // property is not set on the event, it will not be included in the response.
         $property = new PathToExtendedFieldType();
-        $property->PropertyName = 'Room Monitor Group';
+       // $property->PropertyName = 'Meeting Category';
         $property->PropertyType = MapiPropertyTypeType::STRING;
         //$property->DistinguishedPropertySetId = DistinguishedPropertySetType::SHARING;
-        //$property->PropertySetId = '60FD9366-1E7A-42ea-9F25-1D557F25B85C';
+        $property->PropertySetId = '60FD9366-1E7A-42ea-9F25-1D557F25B85C';
  
         $additional_properties = new NonEmptyArrayOfPathsToElementType();
         $additional_properties->ExtendedFieldURI[] = $property;
@@ -259,7 +259,10 @@ class outlook_ews
             // Iterate over the events that were found, printing some data for each.
             $items = $response_message->RootFolder->Items->CalendarItem;
             foreach ($items as $item) {
-                array_push($return,$item);
+                if (strpos(strtolower($item->Location), 'skærm') !== false) {
+                    array_push($return,$item);
+                }
+                
             }
         }
         return $return;
