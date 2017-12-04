@@ -10,7 +10,7 @@ $_GET['end'] =  isset($_GET['end']) ? $_GET['end']:'23:59:59';
 $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '4';
 if(isset($_GET['debug']) && $_GET['debug'] == true)
 {
-    mail("tfpet@odense.dk", "Jeg Opdatere", "opdatere indhold");
+    //mail("tfpet@odense.dk", "Jeg Opdatere", "opdatere indhold");
 }
 $template = isset($_GET['skabelon']) ?  $_GET['skabelon']: null;
 if($template == null)
