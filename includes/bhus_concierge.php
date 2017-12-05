@@ -185,6 +185,7 @@ class outlook_ews
 {
     private $user = null;
     private $password = null;
+    private $known_ids = array();
     public function outlook_ews($User,$Password)
     {
         $this->user = $User;
@@ -221,12 +222,12 @@ class outlook_ews
         $property = new PathToExtendedFieldType();
        // $property->PropertyName = 'Meeting Category';
         $property->PropertyType = MapiPropertyTypeType::STRING;
-        //$property->DistinguishedPropertySetId = DistinguishedPropertySetType::SHARING;
-        $property->PropertySetId = '60FD9366-1E7A-42ea-9F25-1D557F25B85C';
+        $property->PropertyTag = (int)0x6902;
+        //$property->PropertySetId = '60FD9366-1E7A-42ea-9F25-1D557F25B85C';
  
         $additional_properties = new NonEmptyArrayOfPathsToElementType();
         $additional_properties->ExtendedFieldURI[] = $property;
-        //$request->ItemShape->AdditionalProperties = $additional_properties;
+        $request->ItemShape->AdditionalProperties = $additional_properties;
         
         $mailBox = new EmailAddressType();
         $mailBox->EmailAddress = $Target;
@@ -255,12 +256,13 @@ class outlook_ews
                 echo("Failed to search for events with \"$code: $message\"\n");
                 continue;
             }
-
+            
             // Iterate over the events that were found, printing some data for each.
             $items = $response_message->RootFolder->Items->CalendarItem;
             foreach ($items as $item) {
-                if (strpos(strtolower($item->Location), 'skærm') !== false) {
+                if (strpos(strtolower($item->Location), 'skærm') !== false && !array_key_exists($item->UID,$this->known_ids) ) {
                     array_push($return,$item);
+                    $this->known_ids[$item->UID] = true;
                 }
                 
             }

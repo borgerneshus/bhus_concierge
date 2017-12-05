@@ -14,7 +14,7 @@ if($template == null)
 	echo "Angiv en skabelon";
 	exit(1);
 }
-$_GET['targetmailbox'] = isset($_GET['targetmailbox']) ? $_GET['targetmailbox'] : "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok21_borghus@odense.dk,lok22_borghus@odense.dk,lok31_borghus@odense.dk,lok32_borghus@odense.dk,lok33_borghus@odense.dk,lok34_borghus@odense.dk,lok35_borghus@odense.dk,lok36_borghus@odense.dk";
+$_GET['targetmailbox'] = isset($_GET['targetmailbox']) ? $_GET['targetmailbox'] : "borgerneshusbooking@odense.dk";
 $_GET['start'] = isset($_GET['start']) ? $_GET['start'] : '00:00:00'; 
 $_GET['end'] =  isset($_GET['end']) ? $_GET['end'] : '23:59:59';
 $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '10';
