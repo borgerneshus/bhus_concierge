@@ -9,7 +9,7 @@ $_GET['targetmailbox'] = "borgerneshusbooking@odense.dk";
 //$_GET['targetmailbox'] = "lok31_borghus@odense.dk,lok32_borghus@odense.dk";
 $_GET['start'] = isset($_GET['start']) ? $_GET['start'] :'00:00:00'; 
 $_GET['end'] =  isset($_GET['end']) ? $_GET['end']:'23:59:59';
-$_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '4';
+$_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '10';
 if(isset($_GET['debug']) && $_GET['debug'] == true)
 {
     //mail("tfpet@odense.dk", "Jeg Opdatere", "opdatere indhold");
