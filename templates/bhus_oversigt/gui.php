@@ -2,6 +2,18 @@
 include_once "includes/functions.php";
 $b = new bhus_oversigt();
 //$calendar_events = $b->enrich_with_obib_data($calendar_events);
+$string = '2017-12-05';//string variable
+$date = date('Y-m-d',time());//date variable
+if(strtotime($string) == strtotime('today'))
+{
+    $obj = new stdClass;
+    $obj->Location = "Musikafdelingen - 2. sal" . " skærm";
+    $obj->Start = "05-12-2017 17:00";
+    $obj->End = "05-12-2017 22:00";
+    $obj->Subject = "Folkeuniversitetet";
+    array_push($calendar_events,$obj); 
+}
+
 ?>
 <div id="wrapper" class="col-sm-12 col-lg-12 col-md-12 " style="margin:0px;padding:5px;">
     <div id="top-bar" class="col-sm-12 col-lg-12 col-md-12 removemargin">
