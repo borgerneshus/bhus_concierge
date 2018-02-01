@@ -2,6 +2,7 @@
 include_once "includes/functions.php";
 $b = new bhus_oversigt();
 //$calendar_events = $b->enrich_with_obib_data($calendar_events);
+$calendar_events = $b->enrich_with_område_booking_data($calendar_events);
 $string = '2017-12-05';//string variable
 $date = date('Y-m-d',time());//date variable
 if(strtotime($string) == strtotime('today'))
