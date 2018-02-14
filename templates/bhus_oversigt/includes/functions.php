@@ -46,6 +46,22 @@ class bhus_oversigt
             return $calendar_events;
         } 
     }
+    function EnrichWithCustomEvents($calendar_events)
+    {
+        $string = '2018-02-14';//string variable
+        $date = date('Y-m-d',time());//date variable
+        if(strtotime($string) == strtotime('today'))
+        {
+            $obj = new stdClass;
+            $obj->Location = "børn" . " skærm";
+            $obj->Start = "14-02-2018 13:00";
+            $obj->End = "14-02-2018 14:00";
+            $obj->Subject = "Star Wars på Hovedbiblioteket: Lav dit eget lyssværd";
+            array_push($calendar_events,$obj); 
+        }
+        usort($calendar_events, array('bhus_oversigt','sort_by_start'));
+        return $calendar_events;
+    }
     function isTodayWeekend() {
         $currentDate = new DateTime("now", new DateTimeZone("Europe/Amsterdam"));
         return $currentDate->format('N') >= 6;
