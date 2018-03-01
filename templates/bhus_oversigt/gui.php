@@ -36,8 +36,8 @@ $calendar_events = $b->EnrichWithCustomEvents($calendar_events);
                         $show_count = 0;
                         foreach ($events as $event) {
                             if (strpos(strtolower($event->Location), 'skærm') !== false) {
-                                $event->Location = str_replace("skærm", "", $event->Location);
-                                $event->Location = str_replace("()", "", $event->Location);
+                                $event->Location = str_replace("skærm", "", strtolower($event->Location));
+                                $event->Location = str_replace("()", "", strtolower($event->Location));
                                 date_default_timezone_set('Europe/Copenhagen');
                                 $start = new DateTime($event->Start);
                                 $start->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
