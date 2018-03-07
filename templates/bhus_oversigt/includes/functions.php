@@ -48,14 +48,14 @@ class bhus_oversigt
     }
     function EnrichWithCustomEvents($calendar_events)
     {
-        $string = '2018-02-14';//string variable
+        $string = '2018-03-7';//string variable
         $date = date('Y-m-d',time());//date variable
         if(strtotime($string) == strtotime('today'))
         {
             $obj = new stdClass;
-            $obj->Location = "børn" . " skærm";
-            $obj->Start = "14-02-2018 13:00";
-            $obj->End = "14-02-2018 14:00";
+            $obj->Location = "børn" . " SKÆRM";
+            $obj->Start = "7-03-2018 13:00";
+            $obj->End = "7-03-2018 14:00";
             $obj->Subject = "Star Wars på Hovedbiblioteket: Lav dit eget lyssværd";
             array_push($calendar_events,$obj); 
         }

@@ -3,7 +3,7 @@ include_once "includes/functions.php";
 $b = new bhus_oversigt();
 //$calendar_events = $b->enrich_with_obib_data($calendar_events);
 $calendar_events = $b->enrich_with_område_booking_data($calendar_events);
-$calendar_events = $b->EnrichWithCustomEvents($calendar_events);
+$calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
 
 ?>
 <div id="wrapper" class="col-sm-12 col-lg-12 col-md-12 " style="margin:0px;padding:5px;">
@@ -35,9 +35,12 @@ $calendar_events = $b->EnrichWithCustomEvents($calendar_events);
                         <?php
                         $show_count = 0;
                         foreach ($events as $event) {
-                            if (strpos(strtolower($event->Location), 'skærm') !== false) {
+                            $php_Funny = str_replace('Æ', 'æ', strtolower($event->Location));
+                            if (strpos($php_Funny, 'skærm') !== false) {
+                                $event->Location = str_replace('Æ', 'æ',$event->Location);
                                 $event->Location = str_replace("skærm", "", strtolower($event->Location));
                                 $event->Location = str_replace("()", "", strtolower($event->Location));
+                                
                                 date_default_timezone_set('Europe/Copenhagen');
                                 $start = new DateTime($event->Start);
                                 $start->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
