@@ -27,7 +27,9 @@ foreach($result as $mail => $array)
 {
     foreach ($array[0] as $obj)
     {
-        $encode_test[$mail][] = array("subject" => $obj->Subject,"start" => $obj->Start,"end" => $obj->End,"location" => $obj->Location);
+        $start_date =  new DateTime($obj->Start);
+        $end_date =  new DateTime($obj->End);
+        $encode_test[$mail][] = array("subject" => $obj->Subject,"start" => $start_date->format('d-m-Y H:i'),"end" => $end_date->format('d-m-Y H:i'),"location" => $obj->Location);
     }
 }
 echo  json_encode($encode_test);
