@@ -12,6 +12,7 @@ include_once 'includes/bhus_concierge.php';
 $_GET['targetmailbox'] =  "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok21_borghus@odense.dk,lok22_borghus@odense.dk,lok31_borghus@odense.dk,lok32_borghus@odense.dk,lok33_borghus@odense.dk,lok34_borghus@odense.dk,lok35_borghus@odense.dk,lok36_borghus@odense.dk";
 $_GET['start'] =  isset($_GET['start']) ? $_GET['start'] : 'January 1 00:00:00'; 
 $_GET['end'] = isset($_GET['end']) ? $_GET['end'] : 'December 31 23:59:59';
+$_GET['filter_screen'] = false;
 $concierge = new bhus_concierge();
 $result = $concierge->GetByServiceInput(true);
 /*

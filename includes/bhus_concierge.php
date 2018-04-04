@@ -28,6 +28,7 @@ class bhus_concierge {
     private function GetServiceParams()
     {
         $params = array();
+        $params['filter_screen'] = isset($_GET['filter_screen']) ? $_GET['filter_screen'] : true;
         if(isset($_GET['targetmailbox']))
         {
             $targets = $_GET['targetmailbox'];
@@ -125,7 +126,7 @@ class bhus_concierge {
             {
                 foreach($params['start'] as $index => $start_date)
                 {
-                    $result = $this->ews->GetCalendarForEmail($mail,$start_date,$params['end'][$index],null);
+                    $result = $this->ews->GetCalendarForEmail($mail,$start_date,$params['end'][$index],$params['filter_screen']);
                     $obj = new stdClass();
                     $return[$mail][] = $result;
                 }
@@ -141,7 +142,7 @@ class bhus_concierge {
             {
                 foreach($params['start'] as $index => $start_date)
                 {
-                    $result = $this->ews->GetCalendarForEmail($mail,$start_date,$params['end'][$index],null);
+                    $result = $this->ews->GetCalendarForEmail($mail,$start_date,$params['end'][$index],$params['filter_screen']);
                     $return = array_merge($return,$result);
                     
                 }
@@ -191,7 +192,7 @@ class outlook_ews
         $this->user = $User;
         $this->password = $Password;
     }
-    public function GetCalendarForEmail($Target,$Start,$End,$AdditionalProperties)
+    public function GetCalendarForEmail($Target,$Start,$End,$filter_screen = true)
     {
         // Replace with the date range you want to search in. As is, this will find all
         // events within the current calendar year.
@@ -260,9 +261,19 @@ class outlook_ews
             // Iterate over the events that were found, printing some data for each.
             $items = $response_message->RootFolder->Items->CalendarItem;
             foreach ($items as $item) {
-                if (strpos(strtolower($item->Location), 'skærm') !== false && !array_key_exists($item->UID,$this->known_ids) ) {
-                    array_push($return,$item);
-                    $this->known_ids[$item->UID] = true;
+                if($filter_screen)
+                {
+                    if (strpos(strtolower($item->Location), 'skærm') !== false && !array_key_exists($item->UID,$this->known_ids) ) {
+                        array_push($return,$item);
+                        $this->known_ids[$item->UID] = true;
+                    }
+                }
+                else
+                {
+                     if (!array_key_exists($item->UID,$this->known_ids) ) {
+                        array_push($return,$item);
+                        $this->known_ids[$item->UID] = true;
+                    }
                 }
                 
             }
