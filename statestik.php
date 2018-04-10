@@ -28,11 +28,28 @@ foreach($result as $mail => $array)
 {
     foreach ($array[0] as $obj)
     {
+        $show_screen = 0;
+        $php_Funny = str_replace('Æ', 'æ', strtolower($obj->Location));
+        if (strpos($php_Funny, 'skærm') !== false) {
+            $obj->Location = str_replace('Æ', 'æ',$obj->Location);
+            $obj->Location = str_replace("skærm", "", strtolower($obj->Location));
+            $obj->Location = str_replace("()", "", strtolower($obj->Location));
+            $show_screen = 1;
+        }
         $start_date =  new DateTime($obj->Start);
         $end_date =  new DateTime($obj->End);
-        $encode_test[$mail][] = array("subject" => $obj->Subject,"start" => $start_date->format('d-m-Y H:i'),"end" => $end_date->format('d-m-Y H:i'),"location" => $obj->Location);
+        $send_date = new DateTime($obj->DateTimeSent);
+        $days_before_start =  $send_date->diff($start_date)->format('%a')+1;
+        
+        
+        $forfatter_mail = $concierge->ews->lookup_outlook_smtp_email($obj->Organizer->Mailbox->EmailAddress);
+       
+        $encode_test[$mail][] = array("subject" => $obj->Subject,"start" => $start_date->format('d-m-Y H:i'),"end" => $end_date->format('d-m-Y H:i'),
+            "location" => $obj->Location,'show_on_screen' => $show_screen,'forfatter_mail' => $forfatter_mail,'Forfatter_navn' => $obj->Organizer->Mailbox->Name,
+            'booking_oprettet' => $send_date->format('d-m-Y H:i'),'aflyst' => $obj->IsCancelled ? 1 : 0,'days_before_start' => $days_before_start);
     }
 }
+header('Content-Type: application/json');
 echo  json_encode($encode_test);
  /*switch (json_last_error()) {
         case JSON_ERROR_NONE:

@@ -19,6 +19,7 @@ use \jamesiarmes\PhpEws\Enumeration\MapiPropertyTypeType;
 use \jamesiarmes\PhpEws\Type\PathToExtendedFieldType;
 use \jamesiarmes\PhpEws\ArrayType\NonEmptyArrayOfPathsToElementType;
 use \jamesiarmes\PhpEws\ArrayType\NonEmptyArrayOfBaseItemIdsType;
+use \jamesiarmes\PhpEws\Request\ResolveNamesType;
 class bhus_concierge {
     public $ews = null;
     public $last_return = null;
@@ -93,6 +94,7 @@ class bhus_concierge {
         }
         return $params;
     }
+    
     /*
      * Constructor
      */
@@ -187,6 +189,7 @@ class outlook_ews
     private $user = null;
     private $password = null;
     private $known_ids = array();
+    private $resolved_emails_cache = array();
     public function outlook_ews($User,$Password)
     {
         $this->user = $User;
@@ -279,6 +282,39 @@ class outlook_ews
             }
         }
         return $return;
+    }
+    public function lookup_outlook_smtp_email($outlook_string)
+    {
+        if(!isset($this->resolved_emails_cache[$outlook_string]))
+        {
+            $request = new ResolveNamesType();
+            $request->UnresolvedEntry = $outlook_string;
+            $request->ReturnFullContactData = true;
+            // Set connection information.
+            $host = 'outlook.office365.com';
+            $username = $this->user;
+            $password = $this->password;
+            $version = "Exchange2016";
+
+            $client = new Client($host, $username, $password, $version);
+
+            $return = $client->ResolveNames($request);
+            $forfatter_mail = null;
+            if ($return->ResponseMessages->ResolveNamesResponseMessage[0]->ResponseCode == "NoError") {
+                $test = $return->ResponseMessages->ResolveNamesResponseMessage[0]->ResolutionSet->Resolution[0]->Mailbox->EmailAddress;
+                $this->resolved_emails_cache[$outlook_string] = $test;
+                return  $return->ResponseMessages->ResolveNamesResponseMessage[0]->ResolutionSet->Resolution[0]->Mailbox->EmailAddress;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        else
+        {
+            return $this->resolved_emails_cache[$outlook_string];
+        }
+        
     }
     
 }
