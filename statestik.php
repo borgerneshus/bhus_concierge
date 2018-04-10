@@ -45,7 +45,7 @@ foreach($result as $mail => $array)
         $forfatter_mail = $concierge->ews->lookup_outlook_smtp_email($obj->Organizer->Mailbox->EmailAddress);
        
         $encode_test[$mail][] = array("subject" => $obj->Subject,"start" => $start_date->format('d-m-Y H:i'),"end" => $end_date->format('d-m-Y H:i'),
-            "location" => $obj->Location,'show_on_screen' => $show_screen,'forfatter_mail' => $forfatter_mail,'Forfatter_navn' => $obj->Organizer->Mailbox->Name,
+            "location" => $obj->Location,'show_on_screen' => $show_screen,'forfatter_mail' => $forfatter_mail,'forfatter_navn' => $obj->Organizer->Mailbox->Name,
             'booking_oprettet' => $send_date->format('d-m-Y H:i'),'aflyst' => $obj->IsCancelled ? 1 : 0,'days_before_start' => $days_before_start);
     }
 }
