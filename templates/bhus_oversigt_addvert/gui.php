@@ -7,6 +7,7 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
 
 ?>
 <div id="wrapper" class="col-sm-12 col-lg-12 col-md-12 " style="margin:0px;padding:5px;">
+    <div id="inner-wrapper" class="col-sm-12 col-lg-12 col-md-12 " style="margin:0px;padding:5px;">
     <div id="top-bar" class="col-sm-12 col-lg-12 col-md-12 removemargin">
         <div class="col-sm-12 col-lg-col-md-12 "><h1 class="" style="" >Aktiviteter og møder i borgernes hus</h1></div>  
         <div id="logo" class="col-sm-12 col-lg-12 col-md-12 removepadding">
@@ -77,5 +78,6 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
         }
         ?>
         <input id="pagecount" value="<?php echo $pagecount ?>" type="hidden">
+    </div>
     </div>
 </div>
