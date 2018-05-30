@@ -8,7 +8,7 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
 ?>
 <div id="wrapper" class="col-sm-12 col-lg-12 col-md-12 " style="margin:0px;padding:5px;">
     <div id="top-bar" class="col-sm-12 col-lg-12 col-md-12 removemargin">
-        <div class="col-sm-12 col-lg-col-md-12 "><h1 class="" style="" >Mødeoversigt</h1></div>  
+        <div class="col-sm-12 col-lg-col-md-12 "><h1 class="" style="" >Aktiviteter og møder i borgernes hus</h1></div>  
         <div id="logo" class="col-sm-12 col-lg-12 col-md-12 removepadding">
            <!--  <div class="col-sm-2 col-lg-2 col-md-2 removepadding"><img style="float:left;height: 100px;margin-top: 18px;"  src="bhus_booking_events(1).png"></div> -->
             
