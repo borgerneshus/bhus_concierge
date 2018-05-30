@@ -1,7 +1,8 @@
 body
 {
     color:white;
-    
+    background-image: url('/templates/bhus_oversigt_addvert/screen_sys_bg.png');
+    background-size: cover;
     overflow-y: no-display;
     height: 100%; 
     width: 100%;
