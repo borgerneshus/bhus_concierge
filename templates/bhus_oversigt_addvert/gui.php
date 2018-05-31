@@ -1,5 +1,5 @@
 <?php
-setlocale(LC_ALL, "da_DK.UTF-8");
+
 include_once "includes/functions.php";
 $b = new bhus_oversigt();
 //$calendar_events = $b->enrich_with_obib_data($calendar_events);
