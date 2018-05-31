@@ -1,5 +1,5 @@
 <?php
-setlocale(LC_TIME, "da_DK.UTF-8");
+setlocale(LC_ALL, "da_DK.UTF-8");
 include_once "includes/functions.php";
 $b = new bhus_oversigt();
 //$calendar_events = $b->enrich_with_obib_data($calendar_events);
@@ -13,8 +13,8 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
         <div class="col-sm-12 col-lg-col-md-12 "><h1 class="" style="" ><?php echo strtoupper("Aktiviteter og mØder i borgernes hus"); ?></h1></div>  
         <div id="logo" class="col-sm-12 col-lg-12 col-md-12 removepadding">
            <!--  <div class="col-sm-2 col-lg-2 col-md-2 removepadding"><img style="float:left;height: 100px;margin-top: 18px;"  src="bhus_booking_events(1).png"></div> -->
-            <div class="col-sm-8 col-lg-8 col-md-12 "><h1 class="" style="" ><?php echo ucfirst(strftime("%A")) . strftime(" d. %d %B %Y") ?></h1></div>
-            <div class="col-sm-8 col-lg-4 col-md-12 text-right"><h1 class="" style="" ><?php echo !$b->isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
+            <div class="col-sm-8 col-lg-8 col-md-8 "><h1 class="" style="" ><?php echo ucfirst(strftime("%A")) . strftime(" d. %d %B %Y") ?></h1></div>
+            <div class="col-sm-4 col-lg-4 col-md-4 text-right"><h1 class="" style="" ><?php echo !$b->isTodayWeekend() ? "Åbent 8-21" : "Åbent 10-16"; ?></h1></div>
         </div>
     </div>
     <br/>
