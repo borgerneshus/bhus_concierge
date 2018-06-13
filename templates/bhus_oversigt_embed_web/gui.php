@@ -7,6 +7,7 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
 
 ?>
 <div id="wrapper" class="col-sm-12 col-lg-12 col-md-12 " style="margin:0px;padding:5px;">
+
     <br/>
     <div class="col-md-12" style="margin-top:20px;">
         <?php
