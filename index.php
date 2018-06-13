@@ -16,7 +16,7 @@ if($template == null)
 $_GET['targetmailbox'] = isset($_GET['targetmailbox']) ? $_GET['targetmailbox'] : "borgerneshusbooking@odense.dk";
 $_GET['start'] = isset($_GET['start']) ? $_GET['start'] : '00:00:00'; 
 $_GET['end'] =  isset($_GET['end']) ? $_GET['end'] : '23:59:59';
-$_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '10';
+$_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '15';
 ?>
 <!DOCTYPE html>
 <html>
