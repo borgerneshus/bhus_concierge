@@ -25,7 +25,7 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
                             <th scope="col">Lokale</th>
                         </tr>
                     </thead>
-                    <tbody style="font-size:22px !important;">
+                    <tbody style="">
                         <?php
                         $show_count = 0;
                         foreach ($events as $event) {
