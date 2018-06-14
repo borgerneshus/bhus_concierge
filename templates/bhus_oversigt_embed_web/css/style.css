@@ -65,7 +65,13 @@ thead
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
-
+    tbody{
+        font-size: 11px;
+    }
+    thead
+    {
+        font-size: 12px;
+    }
 }
 
 /* Small Devices, Tablets */
