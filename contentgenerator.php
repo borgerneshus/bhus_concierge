@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 setlocale(LC_ALL, "da_DK.UTF-8");
 /*error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
