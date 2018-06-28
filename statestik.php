@@ -11,8 +11,8 @@ ini_set('display_startup_errors', TRUE);
 include_once 'includes/bhus_concierge.php';
 
 $_GET['targetmailbox'] =  "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok21_borghus@odense.dk,lok22_borghus@odense.dk,lok31_borghus@odense.dk,lok32_borghus@odense.dk,lok33_borghus@odense.dk,lok34_borghus@odense.dk,lok35_borghus@odense.dk,lok36_borghus@odense.dk";
-$_GET['start'] =  isset($_GET['start']) ? $_GET['start'] : 'April 19 00:00:00'; 
-$_GET['end'] = isset($_GET['end']) ? $_GET['end'] : 'April 19 23:59:59';
+$_GET['start'] =  isset($_GET['start']) ? $_GET['start'] : 'January 1 00:00:00'; 
+$_GET['end'] = isset($_GET['end']) ? $_GET['end'] : 'December 31 23:59:59';
 $_GET['filter_screen'] = false;
 $concierge = new bhus_concierge();
 $result = $concierge->GetByServiceInput(true);
@@ -37,14 +37,13 @@ foreach($result as $mail => $array)
             $obj->Location = str_replace("()", "", strtolower($obj->Location));
             $show_screen = 1;
         }
-        
-        
         $start_date =  new DateTime($obj->Start);
         $start_date->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
         $end_date =  new DateTime($obj->End);
         $end_date->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
         $send_date = new DateTime($obj->DateTimeSent);
-        $send_date->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
+        $end_date->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
+        
         $days_before_start =  $send_date->diff($start_date)->format('%a')+1;
         
         
