@@ -78,7 +78,7 @@
     </head>
     <body>
             <div>
-                <div style="margin-top:5px">
+                <div style="margin-top:5px;float:left;">
                     <div class="dot" style="float:left;"></div>
                     <div style="float:left;">Kom og se E-sport live i stuen!</div>
                 </div>
