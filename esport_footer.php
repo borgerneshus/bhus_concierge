@@ -16,20 +16,21 @@
                 font-size:25px;
             }
             .dot {
-                height: 20px;
-                width: 20px;
+                height: 25px;
+                width: 25px;
                 background-color: red;
                 border-radius: 50%;
                 display: inline-block;
                 margin-right: 5px;
+                margin-top: 2px;
               }
         </style>
     </head>
     <body>
             <div>
-            <div class="dot"></div>
-            <div>Kom og se E-sport live i stuen!</div>
-            <div style="float:right">Logo</div>
+            <div class="dot" style="float:left;"></div>
+            <div style="float:left;">Kom og se E-sport live i stuen!</div>
+            <div style="float:right;">Logo</div>
             </div>
     </body>
 </html>
