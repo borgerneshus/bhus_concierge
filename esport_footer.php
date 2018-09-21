@@ -65,7 +65,7 @@
             <div>
                 <div style="margin-top:13px;float:left;">
                     <div class="dot" style="float:left;"></div>
-                    <div style="float:left;">Live - Kom og se E-sport live i stuen!</div>
+                    <div style="float:left;">Live - Kom og se eSsport live i indgangsområdet!</div>
                 </div>
             <div style="float:right;"><img src="/esport_logo_small.jpg"></div>
             </div>
