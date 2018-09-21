@@ -78,8 +78,10 @@
     </head>
     <body>
             <div>
-            <div class="dot" style="float:left;"></div>
-            <div style="float:left;">Kom og se E-sport live i stuen!</div>
+                <div style="margin-top:5px">
+                    <div class="dot" style="float:left;"></div>
+                    <div style="float:left;">Kom og se E-sport live i stuen!</div>
+                </div>
             <div style="float:right;"><img src="/esport_logo_small.jpg"></div>
             </div>
     </body>
