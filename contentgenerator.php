@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 setlocale(LC_ALL, "da_DK.UTF-8");
+date_default_timezone_set ("Europe/Copenhagen");
 /*error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);*/
