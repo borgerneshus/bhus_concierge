@@ -165,7 +165,9 @@ class bhus_concierge {
     function sort_by_start($a, $b)
     {
         $a = new DateTime($a->Start);
+        $a->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
         $b = new DateTime($b->Start);
+        $b->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
         if ($a == $b) {
             return 0;
         }
@@ -174,7 +176,9 @@ class bhus_concierge {
     function sort_by_end($a, $b)
     {
         $a = new DateTime($a->End);
+        $a->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
         $b = new DateTime($b->End);
+        $b->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
         if ($a == $b) {
             return 0;
         }
