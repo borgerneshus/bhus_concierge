@@ -17,17 +17,18 @@ $(document).ready(function(){
         var StartDate = $('#startdate').val();
         var EndDate = $('#enddate').val();
         var DisplayCount = $('#displaycount').val();
+        var FilterScreen = $('#filter_screen').val();
         var DebugTest = false;
         d=new Date();
         if(UpdateCount != 0 && UpdateCount < 10)
         {
             var DebugTest = true;
         }
-        else
+        else 
         {
             UpdateCount++;
         }
-        var url = "/contentgenerator.php?skabelon=" + template + "&targetmailbox=" + TargetMails + "&start=" + StartDate + "&end=" + EndDate + "&displaycount="+DisplayCount+"&timestamp="+d.getTime()+"&debug=" + DebugTest;
+        var url = "/contentgenerator.php?skabelon=" + template + "&targetmailbox=" + TargetMails + "&start=" + StartDate + "&end=" + EndDate + "&displaycount="+DisplayCount+"&timestamp="+d.getTime()+"&debug=" + DebugTest+"&filter_screen=" + FilterScreen;
         var jqxhr = $.get( url, function(data ) {
             $("#cover").css('display','none');
             $( "#content" ).fadeOut( "slow", function() {

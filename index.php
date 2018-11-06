@@ -17,6 +17,8 @@ $_GET['targetmailbox'] = isset($_GET['targetmailbox']) ? $_GET['targetmailbox'] 
 $_GET['start'] = isset($_GET['start']) ? $_GET['start'] : '00:00:00'; 
 $_GET['end'] =  isset($_GET['end']) ? $_GET['end'] : '23:59:59';
 $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : '15';
+$_GET['filter_screen'] =  isset($_GET['filter_screen']) ? $_GET['filter_screen'] : 1;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,6 +54,7 @@ $_GET['displaycount'] =  isset($_GET['displaycount']) ? $_GET['displaycount'] : 
         <input id="startdate" type="hidden" value="<?php echo $_GET['start'] ?>">
         <input id="enddate" type="hidden" value="<?php echo $_GET['end'] ?>">
         <input id="displaycount" type="hidden" value="<?php echo $_GET['displaycount'] ?>">
+        <input id="filter_screen" type="hidden" value="<?php echo $_GET['filter_screen'] ?>">
          <footer class="footer col-md-12">
             <div class="col-md-12">
               <div id="pagecounter" class="col-md-12" style="text-align: right;font-size:30px;padding-right:20px !important;"></div>
