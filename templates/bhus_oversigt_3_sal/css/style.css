@@ -50,3 +50,9 @@ thead
     background-color: #0d4949;
     
 }
+.fffW-widget
+{
+    background-color:#0d4949 !important;
+    color:white !important;
+    border: 1px solid #dfdfdf !important;
+}
