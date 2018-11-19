@@ -75,6 +75,27 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
             <?php
         }
         ?>
+         <div class="col-md-12" style="margin-top:100px;"><div class="col-md-3"></div><div class="col-md-6"><div id="widget"></div></div><div class="col-md-3"></div>
         <input id="pagecount" value="<?php echo $pagecount ?>" type="hidden">
     </div>
 </div>
+<script type="text/javascript">
+  var fffWidgetConfig = [];
+  fffWidgetConfig.push({
+    'widget' : 'interactive',
+    'target' : '#widget',
+    'style' : {
+      'type' : 'minimal',
+      'color' : 'turquoise'
+    },
+    'tracking' : false,
+    'button' : { 'reload' : true, 'create' : false },
+    'event' : { 'loadComplet' : null }
+  });
+
+  (function() {
+    var fff = document.createElement('script'); fff.type = 'text/javascript'; fff.async = true;
+    fff.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'service.finurligefakta.dk/widgets/fff.widget.min.js';  
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fff, s);
+  })();
+</script>

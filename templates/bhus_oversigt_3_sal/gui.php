@@ -75,7 +75,7 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
             <?php
         }
         ?>
-         <div class="col-md-12" style="margin-top:169px;"><div class="col-md-3"></div><div class="col-md-6"><div id="widget"></div></div><div class="col-md-3"></div>
+         <div class="col-md-12" style="margin-top:100px;"><div class="col-md-3"></div><div class="col-md-6"><div id="widget"></div></div><div class="col-md-3"></div>
         <input id="pagecount" value="<?php echo $pagecount ?>" type="hidden">
     </div>
 </div>
