@@ -74,8 +74,12 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
          <div id="no-results"><br/><br/>Ingen aktiviter på nuværende tidspunkt.</div>
             <?php
         }
+        if(sizeof($calendar_events) <= 21)
+        {
         ?>
+        
          <div class="col-md-12" style="margin-top:100px;"><div class="col-md-3"></div><div class="col-md-6"><div id="widget"></div></div><div class="col-md-3"></div>
+        <?php } ?>
         <input id="pagecount" value="<?php echo $pagecount ?>" type="hidden">
     </div>
 </div>
