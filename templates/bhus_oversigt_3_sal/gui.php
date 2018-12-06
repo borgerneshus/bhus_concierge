@@ -48,6 +48,7 @@ $calenda//r_events = $b->EnrichWithCustomEvents($calendar_events);
                             $end = new DateTime($event->End);
                             $end->setTimeZone(new DateTimeZone('Europe/Copenhagen'));
                             $locations = explode(';', $event->Location);
+                            $b->clean_event_location($locations);
                             ?>
                             <tr>
                                 <td style="white-space: nowrap;border-top-style:none;" class="col-md-2"><?php echo $start->format('H:i') . " - " . $end->format('H:i') ?></td>

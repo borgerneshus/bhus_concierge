@@ -1,6 +1,14 @@
 <?php
 class bhus_oversigt
 {
+    public function clean_event_location(&$locations)
+    {
+        $allowed_locations = array();
+        foreach($locations as $index => $lokale)
+        {
+            $locations[$index] = preg_replace('/.*borgernes(.*?)lokale/','',$lokale,1);
+        }
+    }
     public function enrich_with_obib_data($calendar_events)
     {
         /*
