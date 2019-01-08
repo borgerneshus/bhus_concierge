@@ -7,7 +7,7 @@ ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);*/
 include_once 'includes/bhus_concierge.php';
 
-$_GET['targetmailbox'] = "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok21_borghus@odense.dk,lok22_borghus@odense.dk,lok31_borghus@odense.dk,lok32_borghus@odense.dk,lok33_borghus@odense.dk,lok34_borghus@odense.dk,lok35_borghus@odense.dk,lok36_borghus@odense.dk";
+$_GET['targetmailbox'] = "lok11_borghus@odense.dk,lok12_borghus@odense.dk,lok13_borghus@odense.dk,lok21_borghus@odense.dk,lok22_borghus@odense.dk,lok31_borghus@odense.dk,lok32_borghus@odense.dk,lok33_borghus@odense.dk,lok34_borghus@odense.dk,lok35_borghus@odense.dk,lok36_borghus@odense.dk";
 //$_GET['targetmailbox'] = "borgerneshusbooking@odense.dk";
 //$_GET['targetmailbox'] = "lok31_borghus@odense.dk,lok32_borghus@odense.dk";
 $_GET['start'] = isset($_GET['start']) ? $_GET['start'] :'00:00:00'; 
