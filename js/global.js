@@ -42,7 +42,7 @@ $(document).ready(function(){
                    {
                     $('#bhus_open').toggle();
                    }
-                    unloadScrollBars();
+                    //unloadScrollBars();
                     PageCount = parseInt($('#pagecount').val());
                     CurrentPage = 0;
                     
